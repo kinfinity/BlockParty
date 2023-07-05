@@ -11,6 +11,7 @@ import sys
 from pathlib import PurePath
 
 from docopt import docopt
+from ipfsscrapper.connections.postgresConnection import PostgressConnection
 from ipfsscrapper.utils.config import Config
 
 
@@ -28,6 +29,9 @@ def run(argv=None):
 
     # Load config
     configuration = Config(PurePath(arguments["--configuration"]))
+
+    #  db connection 
+    _postgressConnection = PostgressConnection(configuration=configuration).engine
 
 
 if __name__ == '__main__':
