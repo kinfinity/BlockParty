@@ -8,8 +8,10 @@ Options:
 """
 import logging
 import sys
+from pathlib import PurePath
 
 from docopt import docopt
+from ipfsscrapper.utils.config import Config
 
 
 def run(argv=None):
@@ -24,6 +26,8 @@ def run(argv=None):
     )
     logging.info(arguments)
 
+    # Load config
+    configuration = Config(PurePath(arguments["--configuration"]))
 
 
 if __name__ == '__main__':
