@@ -2,8 +2,8 @@
 name = "scrapper"
 version = "0.1.0"
 description = ""
-authors = ["kinfinity <kokou.egbewatt@gmail.com>"]
-readme = "README.md"
+authors = ["kinfinity <kokou.egbewaett@gmail.com>"]
+packages = [{include = "ipfsscrapper", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
