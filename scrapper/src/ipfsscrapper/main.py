@@ -8,6 +8,7 @@ Options:
 """
 import logging
 import sys
+import csv
 from pathlib import PurePath
 
 from docopt import docopt
@@ -33,6 +34,18 @@ def run(argv=None):
     #  db connection 
     _postgressConnection = PostgressConnection(configuration=configuration).engine
 
+    # Build list from ipfs_cids file
+    ipfs_cids_list = []
+    with open(configuration.ipfs_cids, 'r') as file:
+        csv_reader = csv.reader(file)
+        for row in csv_reader:
+            ipfs_cids_list.append(row)
+
+    for cid in ipfs_cids_list:
+       logging.info(cid[0])
+
+
+    #  
 
 if __name__ == '__main__':
     run()
