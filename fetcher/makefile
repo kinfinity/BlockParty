@@ -44,6 +44,7 @@ docker-run:
 	$(info ---> Running Docker Container: ${DOCKER_CONTAINER_NAME} in Environment: ${profile})
 	docker run --name ${DOCKER_CONTAINER_NAME} -it \
 				--env environment=${profile} \
+				-p 8000:8000 \
 				$(DOCKER_IMAGE_NAME)
 
 ## docker-start: Builts Docker image and runs it.
