@@ -21,4 +21,4 @@ RUN poetry config virtualenvs.create false \
 EXPOSE 8000
 
 # Set the command to run your Python application using Poetry
-CMD ["poetry", "run", "ipfsscrapper"]
+CMD ["poetry", "run", "ipfsscrapper", "--configuration", "config.json"]
